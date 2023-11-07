@@ -25,6 +25,6 @@ class HomeController extends Controller
     public function index()
     {
         $transaksi = Transaksi::all();
-        return view('admin.index', compact('transaksi'));
+        return view('keuangan.index', compact('transaksi'));
     }
 }

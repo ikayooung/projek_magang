@@ -13,7 +13,7 @@ class TransaksiController extends Controller
     public function index()
     {
         $transaksi = Transaksi::all();
-        return view('admin.index', compact('transaksi'));
+        return view('keuangan.index', compact('transaksi'));
     }
 
     /**
@@ -22,7 +22,7 @@ class TransaksiController extends Controller
     public function create()
     {
         //
-        return view ('admin.create');
+        return view ('keuangan.create');
     }
 
     /**
@@ -40,7 +40,7 @@ class TransaksiController extends Controller
             'no_agenda' => $request->no_agenda,
             'no_invoice' => $request->no_invoice,
             'no_fp' => $request->no_fp,
-            'perusahaan' => $request->perusahaan,
+            'nama_perusahaan' => $request->nama_perusahaan,
         ]);
 
         return redirect()->route('transaksi.index');
@@ -61,7 +61,7 @@ class TransaksiController extends Controller
     {
         //
         $transaksi->find($transaksi);
-        return view ('admin.edit', compact ('transaksi'));
+        return view ('keuangan.edit', compact ('transaksi'));
     }
 
     /**
@@ -79,7 +79,7 @@ class TransaksiController extends Controller
             'no_agenda' => $request->no_agenda,
             'no_invoice' => $request->no_invoice,
             'no_fp' => $request->no_fp,
-            'perusahaan' => $request->perusahaan,
+            'nama_perusahaan' => $request->nama_perusahaan,
         ]);
         return redirect()->route('transaksi.index');
     }

@@ -9,7 +9,7 @@
 
     </div> --}}
     <div class="col-md-6 text-end m-auto">
-        <a href="" class="btn btn-primary btn-sm">Export</a>
+        <a href="" class="btn btn-primary btn-sm">Import</a>
         <a href="{{ route('transaksi.create') }}" class="btn btn-primary btn-sm">Tambah Data</a>
     </div>
 
@@ -44,7 +44,7 @@
                     <td>{{ $item->no_agenda }}</td>
                     <td>{{ $item->no_invoice }}</td>
                     <td>{{ $item->no_fp }}</td>
-                    <td>{{ $item->perusahaan }}</td>
+                    <td>{{ $item->nama_perusahaan }}</td>
                     <td>
                         <a class="btn btn-sm btn-warning" href="{{ route('transaksi.edit', $item->id) }}">Edit</a>
                         <form action="{{ route('transaksi.destroy', $item->id) }}" method="POST" style="display: inline">

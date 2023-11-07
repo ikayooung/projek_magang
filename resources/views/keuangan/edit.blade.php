@@ -50,8 +50,8 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="perusahaan" class="form-label">Nama Perusahaan</label>
-                        <input type="text" name="perusahaan" id="perusahaan" class="form-control" value="{{ $transaksi->perusahaan }}">
+                        <label for="nama_perusahaan" class="form-label">Nama Perusahaan</label>
+                        <input type="text" name="nama_perusahaan" id="nama_perusahaan" class="form-control" value="{{ $transaksi->nama_perusahaan }}">
                     </div>
                     <button type="submit" class="btn btn-primary">Simpan</button>
                 </form>
