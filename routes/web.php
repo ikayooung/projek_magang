@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TransaksiController;
 use App\Http\Controllers\CustomerController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,5 +23,8 @@ use App\Http\Controllers\CustomerController;
 Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::resource('transaksi', TransaksiController::class);
-Route::resource('customer', CustomerController::class);
+Route::middleware(['auth', 'admin'])->group(function () {
+    Route::resource('transaksi', TransaksiController::class);
+    Route::resource('customer', CustomerController::class);
+    Route::get('/dashboard', 'AdminController@dashboard')->name('admin.dashboard');
+});
