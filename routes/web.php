@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TransaksiController;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\KeuanganController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -27,4 +28,6 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::resource('transaksi', TransaksiController::class);
     Route::resource('customer', CustomerController::class);
     Route::get('/dashboard', 'AdminController@dashboard')->name('admin.dashboard');
+    Route::post('/import/keuangan', [KeuanganController::class, 'import'])->name('import.keuangan');
+    Route::get('/import/template', [KeuanganController::class, 'downloadFile'])->name('import.template');
 });

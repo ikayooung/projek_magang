@@ -3,17 +3,18 @@
 @section('content')
 <div class="row">
     <div class="col-md-6">
-        <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light"></span> Data Invoice</h4>
+        <h4 class="fw-bold py-3 mb-4">
+            <span class="text-muted fw-light"></span> Data Invoice
+        </h4>
     </div>
-    {{-- <div class="col-md-6">
-
-    </div> --}}
-    <div class="col-md-6 text-end m-auto">
-        <a href="" class="btn btn-primary btn-sm">Import</a>
-        <a href="{{ route('transaksi.create') }}" class="btn btn-primary btn-sm">Tambah Data</a>
+    <div class="col-md-6 d-flex justify-content-end align-items-center">
+        @livewire('import-keuangan')
+        <a href="{{ route('transaksi.create') }}" class="btn btn-primary ms-2">Tambah Data</a>
     </div>
-
 </div>
+
+<x-_alert/>
+
 <div class="card p-4">
     <div class="table-responsive text-nowrap">
         <table class="datatable table py-3">
