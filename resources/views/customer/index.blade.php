@@ -6,7 +6,19 @@
         <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light"></span> Data Customer</h4>
     </div>
     <div class="col-md-6 text-end m-auto">
-        <a href="{{ route('customer.create') }}" class="btn btn-primary btn-sm">Tambah Data</a>
+        <div class="row justify-content-end">
+            <div class="col-auto">
+                <form action="{{ route('customer.index') }}" method="GET">
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="search" placeholder="Search..." value="{{ request('search') }}">
+                        <button class="btn btn-primary" type="submit">Search</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-auto">
+                <a href="{{ route('customer.create') }}" class="btn btn-primary">Tambah Data</a>
+            </div>
+        </div>
     </div>
 </div>
 <x-_alert/>

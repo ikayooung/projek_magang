@@ -18,10 +18,9 @@ class CustomerController extends Controller
     {
         $this->fpdf = new Fpdf();
     }
-    public function index()
+    public function index(Request $request)
     {
-        //
-        $customer = Customer::all();
+        $customer = (!$request->search) ? Customer::all() : Customer::search($request->search)->get();
         return view('customer.index', compact('customer'));
     }
 
