@@ -17,30 +17,41 @@
     <ul class="menu-inner py-1">
         <li class="menu-item {{ request()->is('home', 'admin/home') ? 'active' : '' }}">
         </li>
-        <li class="menu-item">
-            <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-book"></i>
-                <div data-i18n="Data Master">Data Semua</div>
-            </a>
+        @if(Auth::user()->role == 'keuangan')
+            <li class="menu-item">
+                <a href="javascript:void(0);" class="menu-link menu-toggle">
+                    <i class="menu-icon tf-icons bx bx-book"></i>
+                    <div data-i18n="Data Master">Data Semua</div>
+                </a>
 
-            <ul class="menu-sub">
+                <ul class="menu-sub">
+                    <li class="menu-item">
+                        <a href="{{ route('transaksi.index') }}" class="menu-link">
+                            <div>Transaksi</div>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="{{ route('customer.index') }}" class="menu-link">
+                            <div>Customer</div>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="" class="menu-link">
+                            <div>Laporan</div>
+                        </a>
+                    </li>
+
+                </ul>
+            </li>
+        @endif
+        @if(Auth::user()->role == 'umum')
+            <li class="menu-item">
                 <li class="menu-item">
-                    <a href="{{ route('transaksi.index') }}" class="menu-link">
-                        <div>Transaksi</div>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a href="{{ route('customer.index') }}" class="menu-link">
+                    <a href="{{ route('umum') }}" class="menu-link">
                         <div>Customer</div>
                     </a>
                 </li>
-                <li class="menu-item">
-                    <a href="" class="menu-link">
-                        <div>Laporan</div>
-                    </a>
-                </li>
-
-            </ul>
-        </li>
+            </li>
+        @endif
     </ul>
 </aside>

@@ -48,4 +48,9 @@ class User extends Authenticatable
     {
         return $this->role === 'keuangan';
     }
+
+    public function isUser()
+    {
+        return $this->role === 'umum';
+    }
 }
