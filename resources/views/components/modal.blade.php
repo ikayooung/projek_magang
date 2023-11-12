@@ -1,10 +1,11 @@
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#{{$name}}">
+<?php $random = rand(1,90000); ?>
+<button type="button" class="btn btn-{{($name=='Edit') ? 'warning' : 'primary'}} btn-sm" data-bs-toggle="modal" data-bs-target="#{{$name.$random}}">
     {{$name}}
 </button>
-  
+
 <!-- Modal -->
-<div class="modal fade" id="{{$name}}" tabindex="-1" aria-labelledby="{{$name}}Label" aria-hidden="true">
+<div class="modal fade" id="{{$name.$random}}" tabindex="-1" aria-labelledby="{{$name.$random}}Label" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">

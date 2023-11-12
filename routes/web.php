@@ -26,8 +26,10 @@ Auth::routes();
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::middleware(['auth', 'admin'])->group(function () {
     Route::resource('transaksi', TransaksiController::class);
+    Route::post('/customer/update/{id}', [CustomerController::class, 'update'])->name('customer.update');
+    Route::post('/customer/delete/{id}', [CustomerController::class, 'destroy'])->name('customer.delete');
+    Route::get('/customer/print/{id}', [CustomerController::class, 'print'])->name('customer.print');
     Route::resource('customer', CustomerController::class);
-    Route::get('/dashboard', 'AdminController@dashboard')->name('admin.dashboard');
     Route::post('/import/keuangan', [KeuanganController::class, 'import'])->name('import.keuangan');
     Route::get('/import/template', [KeuanganController::class, 'downloadFile'])->name('import.template');
 });

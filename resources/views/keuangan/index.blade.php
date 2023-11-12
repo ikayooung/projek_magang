@@ -9,7 +9,7 @@
     </div>
     <div class="col-md-6 d-flex justify-content-end align-items-center">
         @livewire('import-keuangan')
-        <a href="{{ route('transaksi.create') }}" class="btn btn-primary ms-2">Tambah Data</a>
+        <a href="{{ route('transaksi.create') }}" class="btn btn-primary btn-sm ms-2">Tambah Data</a>
     </div>
 </div>
 
