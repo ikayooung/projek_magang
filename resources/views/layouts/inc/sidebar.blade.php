@@ -30,11 +30,11 @@
                             <div>Transaksi</div>
                         </a>
                     </li>
-                    <li class="menu-item">
+                    {{-- <li class="menu-item">
                         <a href="{{ route('customer.index') }}" class="menu-link">
                             <div>Customer</div>
                         </a>
-                    </li>
+                    </li> --}}
                     <li class="menu-item">
                         <a href="{{route('keuangan.laporan')}}" class="menu-link">
                             <div>Laporan</div>

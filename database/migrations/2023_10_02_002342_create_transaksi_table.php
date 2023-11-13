@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('transaksi', function (Blueprint $table) {
             $table->id();
-            $table->integer('no_bill')->nullable();
+            $table->string('no_bill')->nullable();
             $table->date('tanggal_kirim')->nullable();
             $table->date('tanggal_terima')->nullable();
             $table->string('nama_penerima')->nullable();
