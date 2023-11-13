@@ -33,6 +33,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::resource('customer', CustomerController::class);
     Route::post('/import/keuangan', [KeuanganController::class, 'import'])->name('import.keuangan');
     Route::get('/import/template', [KeuanganController::class, 'downloadFile'])->name('import.template');
+    Route::get('/keuangan/laporan', [KeuanganController::class, 'laporan'])->name('keuangan.laporan');
 });
 
 Route::middleware(['auth', 'user'])->group(function () {
@@ -40,4 +41,5 @@ Route::middleware(['auth', 'user'])->group(function () {
     Route::post('/customer/update/{id}', [CustomerController::class, 'update'])->name('customer.update');
     Route::post('/customer/delete/{id}', [CustomerController::class, 'destroy'])->name('customer.delete');
     Route::get('/customer/print/{id}', [CustomerController::class, 'print'])->name('customer.print');
+    Route::resource('customer', CustomerController::class);
 });

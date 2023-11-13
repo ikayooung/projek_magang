@@ -36,7 +36,7 @@
                         </a>
                     </li>
                     <li class="menu-item">
-                        <a href="" class="menu-link">
+                        <a href="{{route('keuangan.laporan')}}" class="menu-link">
                             <div>Laporan</div>
                         </a>
                     </li>

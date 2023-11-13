@@ -38,7 +38,7 @@
                 <tr>
                     <td>{{ $loop->iteration }}</td>
                     <td>{{ $item->no_bill }}</td>
-                    <td>{{  $item->tanggal_kirim }}</td>
+                    <td>{{ $item->tanggal_kirim }}</td>
                     <td>{{ $item->tanggal_terima }}</td>
                     <td>{{ $item->nama_penerima }}</td>
                     <td>{{ $item->nama_kapal }}</td>
