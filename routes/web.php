@@ -25,7 +25,7 @@ use Illuminate\Support\Facades\Auth;
 Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::middleware(['auth', 'admin'])->group(function () {
+Route::middleware(['auth', 'checkRole:umum'])->group(function () {
     Route::resource('transaksi', TransaksiController::class);
     Route::post('/customer/update/{id}', [CustomerController::class, 'update'])->name('customer.update');
     Route::post('/customer/delete/{id}', [CustomerController::class, 'destroy'])->name('customer.delete');
@@ -36,7 +36,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/keuangan/laporan', [KeuanganController::class, 'laporan'])->name('keuangan.laporan');
 });
 
-Route::middleware(['auth', 'user'])->group(function () {
+Route::middleware(['auth', 'checkRole:umum'])->group(function () {
     Route::get('/umum/customer', [UmumController::class, 'index'])->name('umum');
     Route::post('/customer/update/{id}', [CustomerController::class, 'update'])->name('customer.update');
     Route::post('/customer/delete/{id}', [CustomerController::class, 'destroy'])->name('customer.delete');
