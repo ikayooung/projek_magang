@@ -25,21 +25,35 @@ use Illuminate\Support\Facades\Auth;
 Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::middleware(['auth', 'checkRole:umum'])->group(function () {
+Route::middleware(['auth', 'checkRole:keuangan'])->group(function () {
+    // Transaksi
     Route::resource('transaksi', TransaksiController::class);
-    Route::post('/customer/update/{id}', [CustomerController::class, 'update'])->name('customer.update');
-    Route::post('/customer/delete/{id}', [CustomerController::class, 'destroy'])->name('customer.delete');
-    Route::get('/customer/print/{id}', [CustomerController::class, 'print'])->name('customer.print');
-    Route::resource('customer', CustomerController::class);
+
+    // Customer
+    Route::group(['prefix' => 'customer'], function () {
+        Route::post('/update/{id}', [CustomerController::class, 'update'])->name('customer.update');
+        Route::post('/delete/{id}', [CustomerController::class, 'destroy'])->name('customer.delete');
+        Route::get('/print/{id}', [CustomerController::class, 'print'])->name('customer.print');
+        Route::resource('/', CustomerController::class);
+    });
+
+    // Import Keuangan
     Route::post('/import/keuangan', [KeuanganController::class, 'import'])->name('import.keuangan');
     Route::get('/import/template', [KeuanganController::class, 'downloadFile'])->name('import.template');
+
+    // Keuangan
     Route::get('/keuangan/laporan', [KeuanganController::class, 'laporan'])->name('keuangan.laporan');
 });
 
 Route::middleware(['auth', 'checkRole:umum'])->group(function () {
-    Route::get('/umum/customer', [UmumController::class, 'index'])->name('umum');
-    Route::post('/customer/update/{id}', [CustomerController::class, 'update'])->name('customer.update');
-    Route::post('/customer/delete/{id}', [CustomerController::class, 'destroy'])->name('customer.delete');
-    Route::get('/customer/print/{id}', [CustomerController::class, 'print'])->name('customer.print');
+    // Umum
+    Route::prefix('umum')->group(function () {
+        Route::get('/customer', [UmumController::class, 'index'])->name('umum');
+        Route::post('/update/{id}', [CustomerController::class, 'update'])->name('umum.update');
+        Route::post('/delete/{id}', [CustomerController::class, 'destroy'])->name('umum.delete');
+        Route::get('/print/{id}', [CustomerController::class, 'print'])->name('umum.print');
+    });
+
+    // Customer
     Route::resource('customer', CustomerController::class);
 });
