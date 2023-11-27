@@ -8,7 +8,7 @@
     <div class="col-md-6 text-end m-auto">
         <div class="row justify-content-end">
             <div class="col-auto">
-                <form action="{{ route('customer.index') }}" method="GET">
+                <form action="{{ route('umum') }}" method="GET">
                     <div class="input-group">
                         <input type="text" class="form-control" name="search" placeholder="Search..." value="{{ request('search') }}">
                         <button class="btn btn-primary" type="submit">Search</button>
@@ -16,7 +16,7 @@
                 </form>
             </div>
             <div class="col-auto">
-                <a href="{{ route('customer.create') }}" class="btn btn-primary">Tambah Data</a>
+                <a href="{{ route('umum.create') }}" class="btn btn-primary">Tambah Data</a>
             </div>
         </div>
     </div>
@@ -60,7 +60,7 @@
                     <td>{{ $item->email }}</td>
                     <td>{{ $item->keterangan }}</td>
                     <td>
-                        <x-edit name="edit_customer" action="{{route('customer.update', $item->id)}}">
+                        <x-edit name="edit_customer" action="{{route('umum.update', $item->id)}}">
                             <div class="mb-3">
                                 <label for="kode_sap" class="form-label">Kode SAP</label>
                                 <input type="text" name="kode_sap" value="{{$item->kode_sap}}" id="kode_sap" class="form-control" autofocus>
@@ -121,8 +121,8 @@
                                 <input type="text" name="keterangan" value="{{$item->keterangan}}" id="keterangan" class="form-control">
                             </div>
                         </x-edit>
-                        <x-delete action="{{route('customer.delete', $item->id)}}"/>
-                        <a class="btn btn-sm btn-primary" href="{{route('customer.print', $item->id)}}">Print</a>
+                        <x-delete action="{{route('umum.delete', $item->id)}}"/>
+                        <a class="btn btn-sm btn-primary" href="{{route('umum.print', $item->id)}}">Print</a>
                     </td>
                 </tr>
                 @endforeach

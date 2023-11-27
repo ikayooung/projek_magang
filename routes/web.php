@@ -48,12 +48,13 @@ Route::middleware(['auth', 'checkRole:keuangan'])->group(function () {
 Route::middleware(['auth', 'checkRole:umum'])->group(function () {
     // Umum
     Route::prefix('umum')->group(function () {
+        // Route::resource('customer', CustomerController::class);
         Route::get('/customer', [UmumController::class, 'index'])->name('umum');
+        Route::post('/create', [CustomerController::class, 'create'])->name('umum.create');
         Route::post('/update/{id}', [CustomerController::class, 'update'])->name('umum.update');
         Route::post('/delete/{id}', [CustomerController::class, 'destroy'])->name('umum.delete');
         Route::get('/print/{id}', [CustomerController::class, 'print'])->name('umum.print');
     });
 
     // Customer
-    Route::resource('customer', CustomerController::class);
 });
