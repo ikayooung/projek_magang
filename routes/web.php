@@ -51,6 +51,7 @@ Route::middleware(['auth', 'checkRole:umum'])->group(function () {
         // Route::resource('customer', CustomerController::class);
         Route::get('/customer', [UmumController::class, 'index'])->name('umum');
         Route::get('/create', [CustomerController::class, 'create'])->name('umum.create');
+        Route::post('/store', [CustomerController::class, 'store'])->name('umum.store');
         Route::post('/update/{id}', [CustomerController::class, 'update'])->name('umum.update');
         Route::post('/delete/{id}', [CustomerController::class, 'destroy'])->name('umum.delete');
         Route::get('/print/{id}', [CustomerController::class, 'print'])->name('umum.print');

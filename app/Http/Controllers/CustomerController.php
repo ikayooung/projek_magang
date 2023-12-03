@@ -54,7 +54,7 @@ class CustomerController extends Controller
             'keterangan' => $request->keterangan,
         ]);
 
-        return redirect()->route('customer.index');
+        return redirect()->route('umum');
     }
 
     /**

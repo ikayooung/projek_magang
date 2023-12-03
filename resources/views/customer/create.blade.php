@@ -6,7 +6,7 @@
     <div class="row">
         <div class="col-md-8">
             <div class="card-body">
-                <form action="{{ route('customer.store') }}" method="POST">
+                <form action="{{ route('umum.store') }}" method="POST">
                     @csrf
                     <div class="mb-3">
                         <label for="kode_sap" class="form-label">Kode SAP</label>
