@@ -116,12 +116,12 @@ class CustomerController extends Controller
         // $this->fpdf->SetMargins(10, 300, 10);
         $this->fpdf->SetFont('Arial', 'B', 12);
         $this->fpdf->Ln(30);
-        $this->fpdf->Cell(40, 10, 'PERUSAHAAN', 0, 0);
-        $this->fpdf->Cell(70, 10, ": $customer->nama_perusahaan", 0, 1);
-        $this->fpdf->Cell(40, 10, 'ALAMAT', 0, 0);
-        $this->fpdf->MultiCell($this->fpdf->GetPageWidth() - 100, 10, ": $customer->alamat_invoice", 0);
-        $this->fpdf->Cell(40, 10, 'NO HP', 0, 0);
-        $this->fpdf->Cell(70, 10, ": $customer->no_telepon");
+        // $this->fpdf->Cell(40, 10, 'PERUSAHAAN', 0, 0);
+        $this->fpdf->Cell(70, 10, "$customer->nama_perusahaan", 0, 1);
+        // $this->fpdf->Cell(40, 10, 'ALAMAT', 0, 0);
+        $this->fpdf->MultiCell($this->fpdf->GetPageWidth() - 100, 10, "$customer->alamat_invoice", 0);
+        // $this->fpdf->Cell(40, 10, 'NO HP', 0, 0);
+        $this->fpdf->Cell(70, 10, "$customer->no_telepon");
 
         $this->fpdf->Line(10, $this->fpdf->GetPageHeight() - 90, $this->fpdf->GetPageWidth() - 10, $this->fpdf->GetPageHeight() - 90);
 
