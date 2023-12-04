@@ -108,6 +108,12 @@ class CustomerController extends Controller
     function print($id)
     {
         $customer = Customer::find($id);
+        return view('customer.print', compact('customer'));
+    }
+
+    function print_not_use($id)
+    {
+        $customer = Customer::find($id);
 
         $this->fpdf->AddPage('L', 'A4');
         $this->fpdf->image('assets/img/LOGO_PBKI.png', 10, 10, 50);
