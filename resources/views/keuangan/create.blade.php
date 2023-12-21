@@ -53,6 +53,11 @@
                         <input type="text" name="nama_perusahaan" id="nama_perusahaan" class="form-control">
                     </div>
 
+                    <div class="mb-3">
+                        <label for="no_resi" class="form-label">No Resi</label>
+                        <input type="text" name="no_resi" id="no_resi" class="form-control">
+                    </div>
+
                     <button type="submit" class="btn btn-primary">Tambah</button>
                 </form>
             </div>

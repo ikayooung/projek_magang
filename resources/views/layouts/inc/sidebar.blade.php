@@ -52,6 +52,13 @@
                     </a>
                 </li>
             </li>
+            <li class="menu-item">
+                <li class="menu-item">
+                    <a href="" class="menu-link">
+                        <div>Laporan</div>
+                    </a>
+                </li>
+            </li>
         @endif
     </ul>
 </aside>

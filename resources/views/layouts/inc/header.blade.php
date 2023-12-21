@@ -31,7 +31,7 @@ id="layout-navbar">
                             </div>
                             <div class="flex-grow-1">
                                 <span class="fw-semibold d-block">{{ Auth::user()->nama }}</span>
-                                <small class="text-muted">Keuangan</small>
+                                <small class="text-muted">Pengguna</small>
                                 {{-- @if (Auth::guard('mahasiswa')->check())
                                     <small class="text-muted">Mahasiswa</small>
                                 @elseif (Auth::guard('admin')->check())

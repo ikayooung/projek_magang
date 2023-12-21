@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('no_invoice')->nullable();
             $table->string('no_fp')->nullable();
             $table->string('nama_perusahaan')->nullable();
+            $table->string('no_resi')->nullable();
             $table->string('created_at')->nullable();
             $table->string('updated_at')->nullable();
         });

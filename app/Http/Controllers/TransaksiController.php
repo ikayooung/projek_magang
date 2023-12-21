@@ -41,6 +41,7 @@ class TransaksiController extends Controller
             'no_invoice' => $request->no_invoice,
             'no_fp' => $request->no_fp,
             'nama_perusahaan' => $request->nama_perusahaan,
+            'no_resi' => $request->no_resi,
         ]);
 
         return redirect()->route('transaksi.index');
@@ -80,6 +81,7 @@ class TransaksiController extends Controller
             'no_invoice' => $request->no_invoice,
             'no_fp' => $request->no_fp,
             'nama_perusahaan' => $request->nama_perusahaan,
+            'no_resi' => $request->no_resi,
         ]);
         return redirect()->route('transaksi.index');
     }

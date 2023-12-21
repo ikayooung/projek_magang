@@ -22,5 +22,6 @@ class Transaksi extends Model
         'no_invoice',
         'no_fp',
         'nama_perusahaan',
+        'no_resi',
     ];
 }

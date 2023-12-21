@@ -30,6 +30,8 @@
                     <th>No Invoice</th>
                     <th>No FP</th>
                     <th>Perusahaan</th>
+                    <th>No Resi</th>
+
                     <th>Aksi</th>
                 </tr>
             </thead>
@@ -46,6 +48,8 @@
                     <td>{{ $item->no_invoice }}</td>
                     <td>{{ $item->no_fp }}</td>
                     <td>{{ $item->nama_perusahaan }}</td>
+                    <td>{{ $item->no_resi }}</td>
+
                     <td>
                         <a class="btn btn-sm btn-warning" href="{{ route('transaksi.edit', $item->id) }}">Edit</a>
                         <form action="{{ route('transaksi.destroy', $item->id) }}" method="POST" style="display: inline">
