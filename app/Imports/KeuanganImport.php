@@ -32,7 +32,7 @@ class KeuanganImport implements ToModel, WithStartRow
             'no_bill' => $row[0],
             'tanggal_kirim' => $tanggal_kirim,
             'tanggal_terima' => $tanggal_terima,
-            'nama_penerima' => $row[3],
+            'nama_pengirim' => $row[3],
             'nama_kapal' => $row[4],
             'no_agenda' => $row[5],
             'no_invoice' => $row[6],

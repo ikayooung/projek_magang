@@ -16,13 +16,14 @@ return new class extends Migration
             $table->string('no_bill')->nullable();
             $table->date('tanggal_kirim')->nullable();
             $table->date('tanggal_terima')->nullable();
-            $table->string('nama_penerima')->nullable();
+            $table->string('nama_pengirim')->nullable();
             $table->string('nama_kapal')->nullable();
             $table->string('no_agenda')->nullable();
             $table->string('no_invoice')->nullable();
             $table->string('no_fp')->nullable();
             $table->string('nama_perusahaan')->nullable();
             $table->string('no_resi')->nullable();
+            $table->string('nama_penerima')->nullable();
             $table->string('created_at')->nullable();
             $table->string('updated_at')->nullable();
         });

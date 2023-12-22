@@ -25,8 +25,8 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="nama_penerima" class="form-label">Nama Penerima</label>
-                        <input type="text" name="nama_penerima" id="nama_penerima" class="form-control" value="{{ $transaksi->nama_penerima }}">
+                        <label for="nama_pengirim" class="form-label">Nama Pengirim</label>
+                        <input type="text" name="nama_pengirim" id="nama_pengirim" class="form-control" value="{{ $transaksi->nama_penerima }}">
                     </div>
 
                     <div class="mb-3">
@@ -59,6 +59,10 @@
                         <input type="text" name="no_resi" id="no_resi" class="form-control" value="{{ $transaksi->nama_perusahaan }}">
                     </div>
 
+                    <div class="mb-3">
+                        <label for="nama_penerima" class="form-label">Nama Penerima</label>
+                        <input type="text" name="nama_penerima" id="nama_penerima" class="form-control" value="{{ $transaksi->nama_penerima }}">
+                    </div>
 
                     <button type="submit" class="btn btn-primary">Simpan</button>
                 </form>

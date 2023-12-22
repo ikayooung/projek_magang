@@ -24,8 +24,8 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="nama_penerima" class="form-label">Nama Penerima</label>
-                        <input type="text" name="nama_penerima" id="nama_penerima" class="form-control">
+                        <label for="nama_pengirim" class="form-label">Nama Pengirim</label>
+                        <input type="text" name="nama_pengirim" id="nama_pengirim" class="form-control">
                     </div>
 
                     <div class="mb-3">
@@ -58,6 +58,10 @@
                         <input type="text" name="no_resi" id="no_resi" class="form-control">
                     </div>
 
+                    <div class="mb-3">
+                        <label for="nama_penerima" class="form-label">Nama Penerima</label>
+                        <input type="text" name="nama_penerima" id="nama_penerima" class="form-control">
+                    </div>
                     <button type="submit" class="btn btn-primary">Tambah</button>
                 </form>
             </div>

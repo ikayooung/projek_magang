@@ -35,13 +35,14 @@ class TransaksiController extends Controller
             'no_bill' => $request->no_bill,
             'tanggal_kirim' => $request->tanggal_kirim,
             'tanggal_terima' => $request->tanggal_terima,
-            'nama_penerima' => $request->nama_penerima,
+            'nama_pengirim' => $request->nama_pengirim,
             'nama_kapal' => $request->nama_kapal,
             'no_agenda' => $request->no_agenda,
             'no_invoice' => $request->no_invoice,
             'no_fp' => $request->no_fp,
             'nama_perusahaan' => $request->nama_perusahaan,
             'no_resi' => $request->no_resi,
+            'nama_penerima' => $request->nama_penerima,
         ]);
 
         return redirect()->route('transaksi.index');
@@ -75,13 +76,14 @@ class TransaksiController extends Controller
             'no_bill' => $request->no_bill,
             'tanggal_kirim' => $request->tanggal_kirim,
             'tanggal_terima' => $request->tanggal_terima,
-            'nama_penerima' => $request->nama_penerima,
+            'nama_pengirim' => $request->nama_pengirim,
             'nama_kapal' => $request->nama_kapal,
             'no_agenda' => $request->no_agenda,
             'no_invoice' => $request->no_invoice,
             'no_fp' => $request->no_fp,
             'nama_perusahaan' => $request->nama_perusahaan,
             'no_resi' => $request->no_resi,
+            'nama_penerima' => $request->nama_penerima,
         ]);
         return redirect()->route('transaksi.index');
     }

@@ -24,14 +24,14 @@
                     <th>No Bill</th>
                     <th>Tanggal Kirim</th>
                     <th>Tanggal Terima</th>
-                    <th>Nama Penerima</th>
+                    <th>Nama Pengirim</th>
                     <th>Nama Kapal</th>
                     <th>No Agenda</th>
                     <th>No Invoice</th>
                     <th>No FP</th>
                     <th>Perusahaan</th>
                     <th>No Resi</th>
-
+                    <th>Nama Penerima</th>
                     <th>Aksi</th>
                 </tr>
             </thead>
@@ -42,14 +42,14 @@
                     <td>{{ $item->no_bill }}</td>
                     <td>{{ $item->tanggal_kirim }}</td>
                     <td>{{ $item->tanggal_terima }}</td>
-                    <td>{{ $item->nama_penerima }}</td>
+                    <td>{{ $item->nama_pengirim }}</td>
                     <td>{{ $item->nama_kapal }}</td>
                     <td>{{ $item->no_agenda }}</td>
                     <td>{{ $item->no_invoice }}</td>
                     <td>{{ $item->no_fp }}</td>
                     <td>{{ $item->nama_perusahaan }}</td>
                     <td>{{ $item->no_resi }}</td>
-
+                    <td>{{ $item->nama_penerima }}</td>
                     <td>
                         <a class="btn btn-sm btn-warning" href="{{ route('transaksi.edit', $item->id) }}">Edit</a>
                         <form action="{{ route('transaksi.destroy', $item->id) }}" method="POST" style="display: inline">

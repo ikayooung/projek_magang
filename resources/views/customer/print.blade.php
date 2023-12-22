@@ -13,8 +13,10 @@
     <div class="col-md-5 container-fluid mt-2">
         <div class="card bg-white border border-black">
             <div class="card-body">
-                <h5> Kepada {{$customer->nama_perusahaan}}</h5>
+                <h5> Kepada Yth. </h5>
+                <h5>{{$customer->nama_perusahaan}}</h5>
                 <h5>{{$customer->alamat_invoice}}</h5>
+                <h5>{{ $customer->contact_person }}</h5>
                 <h5>{{$customer->no_telepon}}</h5>
             </div>
         </div>

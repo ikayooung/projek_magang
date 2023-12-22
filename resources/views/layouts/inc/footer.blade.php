@@ -7,7 +7,7 @@
                 document.write(new Date().getFullYear());
 
             </script>
-            , made with ❤️ BIRO KLASIFIKASI INDONESIA
+            , made with ❤️ BIRO KLASIFIKASI INDONESIA CABANG SAMARINDA
         </div>
     </div>
 </footer>
