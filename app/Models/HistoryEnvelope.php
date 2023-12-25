@@ -13,4 +13,9 @@ class HistoryEnvelope extends Model
     protected $guarded = [];
 
     public $timestamps = false;
+
+    public function customer()
+    {
+        return $this->belongsTo(Customer::class, 'id_customer', 'id');
+    }
 }

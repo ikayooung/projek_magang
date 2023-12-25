@@ -58,6 +58,11 @@ Route::middleware(['auth', 'checkRole:umum'])->group(function () {
             Route::get('/print/{id}', [CustomerController::class, 'print'])->name('umum.print');
         });
 
+        Route::prefix('laporan')->group(function () {
+            Route::get('amplop-kecil', [UmumController::class, 'laporanAmplopKecil'])->name('umum.laporanAmplopKecil');
+            Route::get('amplop-besar', [UmumController::class, 'laporanAmplopBesar'])->name('umum.laporanAmplopBesar');
+        });
+
 
         Route::prefix('customer/amplop-besar')->group(function () {
             Route::get('/', [UmumController::class, 'amplop_besar'])->name('umum.amplop-besar');
