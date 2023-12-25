@@ -26,7 +26,7 @@ class HomeController extends Controller
     public function index()
     {
         if (Auth::user()->role == 'umum') {
-            return redirect()->to('/umum/customer');
+            return redirect()->to('/umum/customer/amplop-kecil');
         }
         $transaksi = Transaksi::all();
         return view('keuangan.index', compact('transaksi'));

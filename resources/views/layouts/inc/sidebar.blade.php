@@ -45,12 +45,23 @@
             </li>
         @endif
         @if(Auth::user()->role == 'umum')
-            <li class="menu-item">
-                <li class="menu-item">
-                    <a href="{{ route('umum') }}" class="menu-link">
-                        <div>Customer</div>
+            <li class="menu-item {{ Request::is('umum/customer*') ? 'active open' : '' }}">
+                <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-user"></i>
+                <div data-i18n="Customer">Customer</div>
+                </a>
+                <ul class="menu-sub">
+                <li class="menu-item {{ Request::is('umum/customer/amplop-kecil*') ? 'active' : '' }}">
+                    <a href="{{route('umum.amplop-kecil')}}" class="menu-link">
+                    <div data-i18n="Account">Amplop Kecil</div>
                     </a>
                 </li>
+                <li class="menu-item {{ Request::is('umum/customer/amplop-besar*') ? 'active' : '' }}">
+                    <a href="{{route('umum.amplop-besar')}}" class="menu-link">
+                    <div data-i18n="Notifications">Amplop Besar</div>
+                    </a>
+                </li>
+                </ul>
             </li>
             <li class="menu-item">
                 <li class="menu-item">

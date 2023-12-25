@@ -8,7 +8,7 @@
     <div class="col-md-6 text-end m-auto">
         <div class="row justify-content-end">
             <div class="col-auto">
-                <form action="{{ route('umum.amplop-kecil') }}" method="GET">
+                <form action="{{ route('umum.amplop-besar') }}" method="GET">
                     <div class="input-group">
                         <input type="text" class="form-control" name="search" placeholder="Search..." value="{{ request('search') }}">
                         <button class="btn btn-primary" type="submit">Search</button>
@@ -21,6 +21,13 @@
         </div>
     </div>
 </div>
+<form action="{{route('umum.PrintAmplopBesar')}}" method="post">
+    @csrf
+<div class="col-auto">
+    <button type="submit" class="btn btn-secondary mb-3">
+       <i class="bx bx-printer"></i> Print
+    </button>
+</div>
 <x-_alert/>
 <div class="card p-4">
     <div class="table-responsive text-nowrap">
@@ -28,6 +35,7 @@
             <thead>
                 <tr>
                     <th>No</th>
+                    <th>Select</th>
                     <th>Kode SAP</th>
                     <th>Kode CRM</th>
                     <th>Nama Perusahaan</th>
@@ -47,6 +55,10 @@
                 @foreach($customer as $item)
                 <tr>
                     <td>{{ $loop->iteration }}</td>
+                    <td>
+                        <input type="checkbox" name="id[]" class="form-check-input" value="{{$item->id}}">
+                    </form>
+                    </td>
                     <td>{{ $item->kode_sap }}</td>
                     <td>{{  $item->kode_crm }}</td>
                     <td>{{ $item->nama_perusahaan }}</td>

@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Customer;
+use App\Models\HistoryEnvelope;
 use Codedge\Fpdf\Fpdf\Fpdf;
+use Illuminate\Support\Facades\DB;
 
 class CustomerController extends Controller
 {
@@ -105,10 +107,44 @@ class CustomerController extends Controller
         return redirect()->back()->with('success', 'Hapus data berhasil!');
     }
 
+
+    function upLaporan($id, $type)
+    {
+        $up = HistoryEnvelope::create([
+            'id_customer' => $id,
+            'tanggal' => date('Y-m-d'),
+            'type' => $type
+        ]);
+
+        if ($up) {
+            return True;
+        }
+        return False;
+    }
+
     function print($id)
     {
         $customer = Customer::find($id);
+        $this->upLaporan($id, 'amplop-kecil');
         return view('customer.print', compact('customer'));
+    }
+
+    function PrintAmplopBesar(Request $request)
+    {
+        $request->validate([
+            'id' => 'required'
+        ]);
+
+        $customer = DB::table('customer')->whereIn('id', [1, 2, 3, 4, 5])->get();
+
+        foreach ($customer as $c) {
+            $this->upLaporan($c->id, 'amplop-besar');
+        }
+
+        $data = [
+            'customer' => $customer
+        ];
+        return view('customer.print-amplop-besar', $data);
     }
 
     function print_not_use($id)
