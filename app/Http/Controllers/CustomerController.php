@@ -56,7 +56,7 @@ class CustomerController extends Controller
             'keterangan' => $request->keterangan,
         ]);
 
-        return redirect()->route('umum');
+        return redirect()->route('umum.amplop-kecil');
     }
 
     /**
