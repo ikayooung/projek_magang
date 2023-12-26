@@ -16,7 +16,7 @@ class Transaksi extends Model
         'no_bill',
         'tanggal_kirim',
         'tanggal_terima',
-        'nama_penerima',
+        'nama_pengirim',
         'nama_kapal',
         'no_agenda',
         'no_invoice',
