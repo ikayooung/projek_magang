@@ -31,7 +31,33 @@
 </div>
 
 <div class="col-md-12 mt-4">
-    <div class="card">
+    <div class="card p-4">
+        <div class="table-responsive text-nowrap">
+            <table class="datatable table py-3">
+                <thead>
+                    <th>No</th>
+                    <th>Nama Perusahaan</th>
+                    <th>Tanggal Cetak</th>
+                </thead>
+                <tbody>
+                    @foreach($laporan as $l)
+                        <tr>
+                            <td>
+                                {{$loop->iteration}}
+                            </td>
+                            <td>
+                                {{$l->customer->nama_perusahaan}}
+                            </td>
+                            <td>
+                                {{$l->tanggal}}
+                            </td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+    </div>
+    {{-- <div class="card">
         <div class="card-body">
             <div class="table-responsive text-nowrap">
                 <table class="table">
@@ -59,6 +85,6 @@
                 </table>
             </div>
         </div>
-    </div>
+    </div> --}}
 </div>
 @endsection
