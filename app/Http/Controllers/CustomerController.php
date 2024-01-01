@@ -134,8 +134,8 @@ class CustomerController extends Controller
         $request->validate([
             'id' => 'required'
         ]);
-
-        $customer = DB::table('customer')->whereIn('id', [1, 2, 3, 4, 5])->get();
+        // dd($request->id);
+        $customer = DB::table('customer')->whereIn('id', $request->id)->get();
 
         foreach ($customer as $c) {
             $this->upLaporan($c->id, 'amplop-besar');

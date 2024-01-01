@@ -60,7 +60,7 @@
                     </form>
                     </td>
                     <td>{{ $item->kode_sap }}</td>
-                    <td>{{  $item->kode_crm }}</td>
+                    <td>{{ $item->kode_crm }}</td>
                     <td>{{ $item->nama_perusahaan }}</td>
                     <td>{{ $item->alamat_invoice }}</td>
                     <td>{{ $item->alamat2 }}</td>
