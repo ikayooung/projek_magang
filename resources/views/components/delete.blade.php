@@ -1,5 +1,5 @@
 <?php $id = rand(1, 10000);?>
-<button class="btn btn-danger btn-sm" onclick="deleteData(this)">
+<button type="button" class="btn btn-danger btn-sm" onclick="deleteData(this)">
     Hapus
 </button>
 <form id="delete-form{{$id}}" action="{{ $action }}" method="POST" style="display: none;">
